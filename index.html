@@ -270,7 +270,22 @@ window.location.href = "https://wa.me/2348141903862?text=" + message;
 <p>WhatsApp: 0814 190 3862</p>
 </div>
 </section>
+<script>
+function sendOrder(event) {
+event.preventDefault();
 
+const name = document.getElementById("customerName").value;
+const service = document.getElementById("designService").value;
+const details = document.getElementById("orderDetails").value;
+
+const message = "Hello Golly Cash!\n" +
+"Name: " + name + "\n" +
+"Service: " + service + "\n" +
+"Order details: " + details;
+
+window.location.href = "https://wa.me/2348141903862?text=" + encodeURIComponent(message);
+}
+</script>
 <footer>© 2026 GÕLLY CASH CREATIVE SERVICES</footer>
 </body>
   </html>
