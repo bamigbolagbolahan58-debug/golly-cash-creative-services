@@ -193,6 +193,55 @@ footer{text-align:center;padding:25px;border-top:1px solid #65502b;color:#bbb}
 </section>
 <section id="order">
 <div class="order">
+<h2>PLACE YOUR ORDER</h2>
+<p>Fill in your details and send your request directly to WhatsApp.</p>
+
+<form onsubmit="sendOrder(event)">
+<input id="customerName" type="text"
+placeholder="Your full name" required>
+
+<br><br>
+
+<select id="designService" required>
+<option value="">Choose a design service</option>
+<option>Flyer Design</option>
+<option>Birthday Design</option>
+<option>Business Advertisement</option>
+<option>Social Media Design</option>
+</select>
+
+<br><br>
+
+<textarea id="orderDetails"
+placeholder="Describe the design you need"
+required></textarea>
+
+<br><br>
+
+<button class="btn" type="submit">
+SEND ORDER ON WHATSAPP
+</button>
+</form>
+</div>
+</section>
+
+<script>
+function sendOrder(event) {
+event.preventDefault();
+
+const name = document.getElementById("customerName").value;
+const service = document.getElementById("designService").value;
+const details = document.getElementById("orderDetails").value;
+
+const message = "Hello Golly Cash!%0A" +
+"Name: " + encodeURIComponent(name) + "%0A" +
+"Service: " + encodeURIComponent(service) + "%0A" +
+"Order details: " + encodeURIComponent(details);
+
+window.location.href = "https://wa.me/2348141903862?text=" + message;
+}
+</script>
+<div class="order">
 <h2>READY TO PLACE AN ORDER?</h2>
 <p>Contact us on WhatsApp. Tell us what design you need and we'll discuss your order.</p>
 <a class="btn" href="https://wa.me/2348141903862?text=Hello%20Golly%20Cash%2C%20I%20want%20to%20place%20an%20order.">CHAT WITH US</a>
